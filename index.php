@@ -85,7 +85,7 @@ foreach ($hotels as $hotel) {
                     <ul>
                         <li>Nome: <?php echo $hotels[$i]['name'] ?></li>
                         <li>Descrizione: <?php echo $hotels[$i]['description'] ?></li>
-                        <li>Parcheggio: <?php echo ($hotels[$i] === true) ? $hotels[$i]['vote'] : 'Nessun Parcheggio' ?></li>
+                        <li>Parcheggio: <?php echo ($hotels[$i]['parking'] == true) ? 'Parcheggio Disponibile' : 'Nessun Parcheggio' ?></li>
                         <li>Voto Recensioni: <?php echo $hotels[$i]['vote'] ?></li>
                         <li>Distanza centro: <?php echo $hotels[$i] ['distance_to_center'] ?> Km</li>
                     </ul>
