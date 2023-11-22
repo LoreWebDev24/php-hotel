@@ -47,15 +47,15 @@
     $centerDistance = '';
 
     foreach ($hotels as $hotel) {
-        $hotelName = $hotel['name'];
+        $hotelName .= $hotel['name'].' ';
         var_dump($hotelName);
-        $hotelDescription = $hotel['description'];
+        $hotelDescription .= $hotel['description'];
         var_dump($hotelDescription);
-        $hotelParking = $hotel['parking'];
+        $hotelParking .=$hotel['parking'];
         var_dump($hotelParking);
-        $hotelVote = $hotel['vote'];
+        $hotelVote .= $hotel['vote'];
         var_dump($hotelVote);
-        $centerDistance = $hotel['distance_to_center'];
+        $centerDistance .= $hotel['distance_to_center'];
         var_dump($centerDistance);
       }
 
@@ -66,10 +66,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Hotels</title>
 </head>
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <?php echo $hotelName ?>
+            </div>
+        </div>
         <p>
         </p>
     </div>
