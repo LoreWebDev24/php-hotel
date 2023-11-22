@@ -1,0 +1,15 @@
+ul,li {
+    list-style: none;
+}
+
+ul {
+    padding: 5px;
+}
+
+li {
+    border: 1px solid black;
+}
+
+.col-3 {
+    border: 1px solid gray;
+}
