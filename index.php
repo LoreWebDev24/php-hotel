@@ -40,23 +40,23 @@
 
     ];
     
-    $hotelName = '';
-    $hotelDescription = '';
-    $hotelParking= '';
-    $hotelVote= '';
-    $centerDistance = '';
+    $hotelNames = '';
+    $hotelDescriptions = '';
+    $hotelParkings= '';
+    $hotelVotes= '';
+    $centerDistances = '';
 
     foreach ($hotels as $hotel) {
-        $hotelName .= $hotel['name'].' ';
-        var_dump($hotelName);
-        $hotelDescription .= $hotel['description'];
-        var_dump($hotelDescription);
-        $hotelParking .=$hotel['parking'];
-        var_dump($hotelParking);
-        $hotelVote .= $hotel['vote'];
-        var_dump($hotelVote);
-        $centerDistance .= $hotel['distance_to_center'];
-        var_dump($centerDistance);
+        $hotelNames .= $hotel['name'].' ';
+        var_dump($hotelNames);
+        $hotelDescriptions .= $hotel['description'].' ';
+        var_dump($hotelDescriptions);
+        $hotelParkings .=$hotel['parking'].' ';
+        var_dump($hotelParkings);
+        $hotelVotes .= $hotel['vote'].' ';
+        var_dump($hotelVotes);
+        $centerDistances .= $hotel['distance_to_center'].' ';
+        var_dump($centerDistances);
       }
 
 ?>
@@ -73,7 +73,19 @@
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <?php echo $hotelName ?>
+                <?php echo $hotelNames ?>
+            </div>
+            <div class="col-2 d-flex">
+                <?php echo $hotelDescriptions ?>
+            </div>
+            <div class="col-2">
+                <?php echo $hotelParkings ?>
+            </div>
+            <div class="col-2">
+                <?php echo $hotelVotes ?>
+            </div>
+            <div class="col-2">
+                <?php echo $centerDistances ?>
             </div>
         </div>
         <p>
