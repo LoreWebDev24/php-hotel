@@ -48,15 +48,15 @@
 
     foreach ($hotels as $hotel) {
         array_push($hotelNames, $hotel['name']);
-        var_dump($hotelNames);
+        // var_dump($hotelNames);
         array_push($hotelDescriptions, $hotel['description']);
-        var_dump($hotelDescriptions);
+        // var_dump($hotelDescriptions);
         array_push($hotelParkings, $hotel['parking']);
-        var_dump($hotelParkings);
+        // var_dump($hotelParkings);
         array_push($hotelVotes, $hotel['vote']);
-        var_dump($hotelVotes);
+        // var_dump($hotelVotes);
         array_push($centerDistances, $hotel['distance_to_center']);
-        var_dump($centerDistances);
+        // var_dump($centerDistances);
       }
 
 ?>
