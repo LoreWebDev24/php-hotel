@@ -45,6 +45,7 @@
     $hotelParkings= [];
     $hotelVotes= [];
     $centerDistances = [];
+    
 
     foreach ($hotels as $hotel) {
         array_push($hotelNames, $hotel['name']);
@@ -58,6 +59,12 @@
         array_push($centerDistances, $hotel['distance_to_center']);
         // var_dump($centerDistances);
       }
+
+      var_dump($hotelNames);
+      var_dump($hotelDescriptions);
+      var_dump($hotelParkings);
+      var_dump($hotelVotes);
+      var_dump($centerDistances);
 
 ?>
 
