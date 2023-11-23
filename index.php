@@ -1,5 +1,7 @@
 <?php
 
+$has_parking = isset($_GET['has_parking']);
+
 $hotels = [
 
     [
@@ -46,7 +48,6 @@ $hotelParkings= [];
 $hotelVotes= [];
 $centerDistances = [];
 
-
 foreach ($hotels as $hotel) {
     array_push($hotelNames, $hotel['name']);
     // var_dump($hotelNames);
@@ -60,12 +61,6 @@ foreach ($hotels as $hotel) {
     // var_dump($centerDistances);
     }
 
-    var_dump($hotelNames);
-    var_dump($hotelDescriptions);
-    var_dump($hotelParkings);
-    var_dump($hotelVotes);
-    var_dump($centerDistances);
- 
 ?>
 
 <!DOCTYPE html>
@@ -78,22 +73,38 @@ foreach ($hotels as $hotel) {
     <title>Hotels</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <?php for ($i = 0; $i < count($hotels); $i++) { ?>    
-                <div class="col-3">
-                    <ul>
-                        <li>Nome: <?php echo $hotels[$i]['name'] ?></li>
-                        <li>Descrizione: <?php echo $hotels[$i]['description'] ?></li>
-                        <li>Parcheggio: <?php echo ($hotels[$i]['parking'] == true) ? 'Parcheggio Disponibile' : 'Nessun Parcheggio' ?></li>
-                        <li>Voto Recensioni: <?php echo $hotels[$i]['vote'] ?></li>
-                        <li>Distanza centro: <?php echo $hotels[$i] ['distance_to_center'] ?> Km</li>
-                    </ul>
-                </div>
-            <?php } ?>
+    <div class="app">
+        <div class="container pb-3">
+            <div class="row">
+                <form class="d-flex  gap-3" action="index.php" method="get">
+                    <label for="has_parking"><strong>Vorresti gli Hotels con almeno un parcheggio ?</strong></label>
+                    <input type="checkbox" value="1" name="has_parking" id="has_parking">
+                    <button type="submit" value="filter">Ricerca</button>
+                </form>
+            </div>
         </div>
-        <p>
-        </p>
+        <div class="container">
+            <div class="row gy-3">
+                <?php for ($i = 0; $i < count($hotels); $i++) { 
+                    if($hotels[$i]['parking'] === $has_parking || !$has_parking) {
+                ?>
+                    <div class="col-3">
+                        <div class="card">
+                            <ul>
+                                <li><strong>Nome: </strong><?php echo $hotels[$i]['name'] ?></li>
+                                <li><strong>Descrizione: </strong><?php echo $hotels[$i]['description'] ?></li>
+                                <li><strong>Parcheggio: </strong><?php echo ($hotels[$i]['parking'] == true) ? 'Parcheggio Disponibile' : 'Nessun Parcheggio' ?></li>
+                                <li><strong>Voto Recensioni: </strong><?php echo $hotels[$i]['vote'] ?></li>
+                                <li><strong>Distanza dal Centro: </strong><?php echo $hotels[$i] ['distance_to_center'] ?> Km</li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php 
+                } 
+                    }
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>
